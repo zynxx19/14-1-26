@@ -116,7 +116,7 @@
 </div>
 
     <div class="gallery-item">
-      <img src= "https://i.imgur.com/a/DZK6J0r.jpg" alt="roblox x2">
+      <img src= "https://i.imgur.com/ye31Vkz.jpg" alt="roblox x2">
     
     </div>
     
@@ -162,5 +162,32 @@
       if (e.target === lightbox) lightbox.style.display = 'none';
     });
   </script>
+  <!-- Música de fondo - estilo Lofi Girl -->
+<audio id="bg-music" autoplay loop volume="0.25">
+  <source src="https://cdn.pixabay.com/download/audio/2023/10/15/audio_8d5f3f6a0c.mp3?filename=lofi-girl-hip-hop-2023-10-15.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+<!-- Botón para controlar (muy útil) -->
+<button id="music-toggle" style="position: fixed; bottom: 20px; right: 20px; background: #ff9ec1; color: white; border: none; padding: 12px 16px; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  🎵
+</button>
+
+<script>
+  const music = document.getElementById('bg-music');
+  const toggleBtn = document.getElementById('music-toggle');
+
+  music.volume = 0.25; // volumen suave
+
+  toggleBtn.addEventListener('click', () => {
+    if (music.paused) {
+      music.play();
+      toggleBtn.textContent = '🔇';
+    } else {
+      music.pause();
+      toggleBtn.textContent = '🎵';
+    }
+  });
+</script>
 </body>
 </html>
